@@ -23,8 +23,9 @@ public class WebCamDualEyed : MonoBehaviour
 
         if (WebCamTexture.devices.Length > cameraNumber)
         {
+            Debug.Log("--> Camera num is " + cameraNumber);
             webCamDevice = WebCamTexture.devices[cameraNumber];
-            webCamTexture = new WebCamTexture(webCamDevice.name, 1280, 720);
+            webCamTexture = new WebCamTexture(webCamDevice.name, 3840, 1920);
             plane.GetComponent<Renderer>().material.mainTexture = webCamTexture;
            
             webCamTexture.Play();
